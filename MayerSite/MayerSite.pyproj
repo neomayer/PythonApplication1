@@ -3,6 +3,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>MayerSite</Name>
     <RootNamespace>MayerSite</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -34,9 +35,35 @@
     <Compile Include="MayerSite\settings.py" />
     <Compile Include="MayerSite\urls.py" />
     <Compile Include="MayerSite\wsgi.py" />
+    <Compile Include="PoorIT\admin.py" />
+    <Compile Include="PoorIT\apps.py" />
+    <Compile Include="PoorIT\migrations\__init__.py" />
+    <Compile Include="PoorIT\models.py" />
+    <Compile Include="PoorIT\tests.py" />
+    <Compile Include="PoorIT\views.py" />
+    <Compile Include="PoorIT\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PoorIT\templates\PoorIT\index.html" />
     <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MayerSite\" />
+    <Folder Include="PoorIT\" />
+    <Folder Include="PoorIT\migrations\" />
+    <Folder Include="PoorIT\templates\" />
+    <Folder Include="PoorIT\templates\PoorIT\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.7</Version>
+      <Description>env (Python 3.7 (32-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X86</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
